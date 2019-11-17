@@ -7,6 +7,7 @@ import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
 from flask_mail import Mail
+from flask_bootstrap import Bootstrap
 
 myApp = Flask(__name__)
 myApp.config.from_object(Config)
@@ -16,6 +17,7 @@ migrate = Migrate(myApp, db)
 login = LoginManager(myApp)
 login.login_view = 'login'
 mail = Mail(myApp)
+bootstrap = Bootstrap(myApp)
 
 if not myApp.debug: # Couldn't get the email to send
     if myApp.config["MAIL_SERVER"]: 
