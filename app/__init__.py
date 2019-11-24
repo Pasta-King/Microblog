@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -8,6 +8,8 @@ from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
 from flask_mail import Mail
 from flask_bootstrap import Bootstrap
+from flask_moment import Moment
+from flask_babel import Babel
 
 myApp = Flask(__name__)
 myApp.config.from_object(Config)
@@ -18,6 +20,8 @@ login = LoginManager(myApp)
 login.login_view = 'login'
 mail = Mail(myApp)
 bootstrap = Bootstrap(myApp)
+moment = Moment(myApp)
+babel = Babel(myApp)
 
 if not myApp.debug: # Couldn't get the email to send
     if myApp.config["MAIL_SERVER"]: 
@@ -45,5 +49,9 @@ if not myApp.debug: # Couldn't get the email to send
     myApp.logger.addHandler(file_handler)
     myApp.logger.setLevel(logging.INFO)
     myApp.logger.info("Microblog startup")
+
+@babel.localeselector
+def get_locale():
+    return request.accept_languages.best_match(app.config["LANGUAGES"])
 
 from app import routes, models, errors
