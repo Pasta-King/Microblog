@@ -52,6 +52,7 @@ if not myApp.debug: # Couldn't get the email to send
 
 @babel.localeselector
 def get_locale():
-    return request.accept_languages.best_match(app.config["LANGUAGES"])
+    #return request.accept_languages.best_match(app.config["LANGUAGES"])
+    return 'es'
 
 from app import routes, models, errors

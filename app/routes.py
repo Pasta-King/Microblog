@@ -25,7 +25,7 @@ def index():
         if posts.has_next else None
     prev_url = url_for("index", page=posts.prev_num) \
         if posts.has_prev else None
-    return render_template("index.html", title=_("Home Page"), form=form, posts=posts.items, next_url=next_url, prev_url=prev_url)
+    return render_template("index.html", title="Home Page", form=form, posts=posts.items, next_url=next_url, prev_url=prev_url)
 
 @myApp.route("/explore")
 @login_required
@@ -37,7 +37,7 @@ def explore():
         if posts.has_next else None
     prev_url = url_for("explore", page=posts.prev_num) \
         if posts.has_prev else None
-    return render_template("explore.html", title=_("Explore"), posts=posts.items, next_url=next_url, prev_url=prev_url) 
+    return render_template("explore.html", title="Explore", posts=posts.items, next_url=next_url, prev_url=prev_url) 
 
 @myApp.route('/login', methods=['GET', 'POST'])
 def login():
@@ -54,7 +54,7 @@ def login():
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('index')
         return redirect(next_page)
-    return render_template('login.html', title=_('Sign In'), form=form)
+    return render_template('login.html', title='Sign In', form=form)
     
 @myApp.route('/logout')
 def logout():
@@ -73,7 +73,7 @@ def register():
         db.session.commit()
         flash(_('Congratulations, you are now a registered user!'))
         return redirect(url_for('login'))
-    return render_template('register.html', title=_('Register'), form=form)
+    return render_template('register.html', title='Register', form=form)
 
 @myApp.route('/user/<username>')
 @login_required
@@ -107,7 +107,7 @@ def edit_profile():
     elif request.method == 'GET':
         form.username.data = current_user.username
         form.about_me.data = current_user.about_me
-    return render_template('edit_profile.html', title=_('Edit Profile'), form=form)
+    return render_template('edit_profile.html', title='Edit Profile', form=form)
 
 @myApp.route('/follow/<username>')
 @login_required
@@ -129,7 +129,7 @@ def follow(username):
 def unfollow(username):
     user = User.query.filter_by(username=username).first()
     if user is None:
-        flash(_("User %(username)s not found.", username=username)
+        flash(_("User %(username)s not found.", username=username))
         return redirect(url_for("index"))
     if user == current_user:
         flash(_("You cannot unfollow yourself!"))
