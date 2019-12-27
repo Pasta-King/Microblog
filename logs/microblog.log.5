@@ -1,14 +1,4 @@
-2019-10-06 20:44:58,169 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
-2019-10-06 20:45:35,211 ERROR: Exception on /edit_profile [POST] [ in e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py:1891]
-Traceback (most recent call last):
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1244, in _execute_context
-    cursor, statement, parameters, context
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 552, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.IntegrityError: UNIQUE constraint failed: user.username
-
-The above exception was the direct cause of the following exception:
-
+2019-10-28 12:12:13,400 ERROR: Exception on /user/John [GET] [ in e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -24,71 +14,66 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "e:\Users\Caio\Documents\Python\Microblog\app\routes.py", line 85, in edit_profile
-    db.session.commit()
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 162, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1027, in commit
-    self.transaction.commit()
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 494, in commit
-    self._prepare_impl()
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 473, in _prepare_impl
-    self.session.flush()
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2459, in flush
-    self._flush(objects)
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2597, in _flush
-    transaction.rollback(_capture_exception=True)
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
-    compat.reraise(exc_type, exc_value, exc_tb)
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 153, in reraise
+  File "e:\Users\Caio\Documents\Python\Microblog\app\routes.py", line 83, in user
+    page, app.config["POSTS_PER_PAGE"], False)
+NameError: name 'app' is not defined
+2019-10-28 12:13:01,873 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
+2019-10-28 12:41:10,078 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
+2019-10-28 12:41:29,158 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
+2019-11-01 22:32:05,177 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
+2019-11-01 22:47:08,794 INFO: Microblog startup [ in E:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
+2019-11-03 21:56:21,337 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:45]
+2019-11-03 22:15:32,396 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:45]
+2019-11-03 22:29:02,260 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:45]
+2019-11-03 22:31:26,857 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:45]
+2019-11-03 22:33:41,906 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:45]
+2019-11-03 22:33:53,215 ERROR: Exception on /reset_password_request [GET] [ in e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
     raise value
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2557, in _flush
-    flush_context.execute()
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 422, in execute
-    rec.execute(self)
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 589, in execute
-    uow,
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 236, in save_obj
-    update,
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 996, in _emit_update_statements
-    statement, multiparams
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 988, in execute
-    return meth(self, multiparams, params)
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 287, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1107, in _execute_clauseelement
-    distilled_params,
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1248, in _execute_context
-    e, statement, parameters, cursor, context
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1466, in _handle_dbapi_exception
-    util.raise_from_cause(sqlalchemy_exception, exc_info)
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 398, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 152, in reraise
-    raise value.with_traceback(tb)
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1244, in _execute_context
-    cursor, statement, parameters, context
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 552, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username
-[SQL: UPDATE user SET username=?, about_me=? WHERE user.id = ?]
-[parameters: ('Susan', '', 1)]
-(Background on this error at: http://sqlalche.me/e/gkpj)
-2019-10-06 20:52:58,177 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
-2019-10-13 17:41:25,296 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
-2019-10-13 17:41:55,106 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
-2019-10-13 17:42:06,157 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
-2019-10-13 19:08:21,246 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
-2019-10-21 17:47:42,981 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
-2019-10-21 17:48:11,222 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
-2019-10-21 17:49:18,695 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
-2019-10-21 17:49:24,840 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
-2019-10-21 17:51:41,524 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
-2019-10-21 17:52:01,226 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
-2019-10-21 17:53:47,710 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
-2019-10-21 17:56:26,561 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
-2019-10-21 19:29:03,413 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
-2019-10-21 19:30:28,841 ERROR: Exception on /unfollow/username [GET] [ in e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py:1891]
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "e:\Users\Caio\Documents\Python\Microblog\app\routes.py", line 153, in reset_password_request
+    return render_template("reset_password_request.html", title="Reset Password", form=form)
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\jinja2\environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\jinja2\environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\jinja2\environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\jinja2\loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\templating.py", line 60, in get_source
+    return self._get_source_fast(environment, template)
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\templating.py", line 89, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: reset_password_request.html
+2019-11-03 22:34:19,555 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:45]
+2019-11-03 22:36:07,340 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:45]
+2019-11-03 22:38:17,488 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:45]
+2019-11-03 22:39:06,718 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:45]
+2019-11-03 22:40:27,442 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:45]
+2019-11-10 19:58:55,071 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:45]
+2019-11-10 20:00:41,506 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:45]
+2019-11-10 20:02:00,930 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:45]
+2019-11-10 20:09:06,955 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:45]
+2019-11-17 17:59:09,199 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:45]
+2019-11-17 20:13:34,047 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:47]
+2019-11-17 20:15:21,816 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:47]
+2019-11-24 16:34:27,401 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:47]
+2019-11-24 17:00:52,483 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:49]
+2019-12-01 14:58:49,789 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:51]
+2019-12-01 14:58:53,151 ERROR: Exception on /explore [GET] [ in e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -104,5 +89,26 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-TypeError: unfollow() missing 1 required positional argument: 'username'
-2019-10-21 19:33:45,729 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
+  File "e:\Users\Caio\Documents\Python\Microblog\app\routes.py", line 40, in explore
+    return render_template("explore.html", title=_("Explore"), posts=posts.items, next_url=next_url, prev_url=prev_url)
+NameError: name '_' is not defined
+2019-12-01 15:10:49,822 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:51]
+2019-12-01 15:10:56,062 ERROR: Exception on /explore [GET] [ in e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "e:\Users\Caio\Documents\Python\Microblog\app\routes.py", line 40, in explore
+    return render_template("explore.html", title=_("Explore"), posts=posts.items, next_url=next_url, prev_url=prev_url)
+NameError: name '_' is not defined

@@ -1,4 +1,4 @@
-2019-12-01 17:58:09,409 ERROR: Exception on /explore [GET] [ in e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py:1891]
+2019-10-21 19:33:49,709 ERROR: Exception on /unfollow/username [GET] [ in e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,10 +14,8 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "e:\Users\Caio\Documents\Python\Microblog\app\routes.py", line 40, in explore
-    return render_template("explore.html", title=_("Explore"), posts=posts.items, next_url=next_url, prev_url=prev_url)
-NameError: name '_' is not defined
-2019-12-01 17:58:11,053 ERROR: Exception on /index [GET] [ in e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py:1891]
+TypeError: unfollow() missing 1 required positional argument: 'username'
+2019-10-21 19:34:00,258 ERROR: Exception on /unfollow/username [GET] [ in e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -33,11 +31,9 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "e:\Users\Caio\Documents\Python\Microblog\app\routes.py", line 28, in index
-    return render_template("index.html", title=_("Home Page"), form=form, posts=posts.items, next_url=next_url, prev_url=prev_url)
-NameError: name '_' is not defined
-2019-12-01 18:06:45,752 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:51]
-2019-12-01 18:06:47,860 ERROR: Exception on / [GET] [ in e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py:1891]
+TypeError: unfollow() missing 1 required positional argument: 'username'
+2019-10-25 14:31:46,785 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
+2019-10-25 14:31:56,313 ERROR: Exception on /unfollow/username [GET] [ in e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -53,10 +49,8 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "e:\Users\Caio\Documents\Python\Microblog\app\routes.py", line 28, in index
-    return render_template("index.html", title=_("Home Page"), form=form, posts=posts.items, next_url=next_url, prev_url=prev_url)
-NameError: name '_' is not defined
-2019-12-01 18:06:53,094 ERROR: Exception on /index [GET] [ in e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py:1891]
+TypeError: unfollow() missing 1 required positional argument: 'username'
+2019-10-25 14:32:14,782 ERROR: Exception on /unfollow/username [GET] [ in e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -72,10 +66,9 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "e:\Users\Caio\Documents\Python\Microblog\app\routes.py", line 28, in index
-    return render_template("index.html", title=_("Home Page"), form=form, posts=posts.items, next_url=next_url, prev_url=prev_url)
-NameError: name '_' is not defined
-2019-12-01 18:06:54,213 ERROR: Exception on /explore [GET] [ in e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py:1891]
+TypeError: unfollow() missing 1 required positional argument: 'username'
+2019-10-25 14:41:17,368 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
+2019-10-25 14:41:33,588 ERROR: Exception on /unfollow/username [GET] [ in e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -91,10 +84,18 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "e:\Users\Caio\Documents\Python\Microblog\app\routes.py", line 40, in explore
-    return render_template("explore.html", title=_("Explore"), posts=posts.items, next_url=next_url, prev_url=prev_url)
-NameError: name '_' is not defined
-2019-12-01 18:07:04,766 ERROR: Exception on /index [GET] [ in e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py:1891]
+TypeError: unfollow() missing 1 required positional argument: 'username'
+2019-10-25 14:42:30,615 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
+2019-10-25 14:45:13,412 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
+2019-10-25 14:45:50,404 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
+2019-10-25 15:31:30,162 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
+2019-10-25 15:32:40,263 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
+2019-10-25 15:52:11,292 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
+2019-10-25 15:52:45,578 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
+2019-10-25 17:05:19,721 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
+2019-10-28 12:03:46,018 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
+2019-10-28 12:12:06,037 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:43]
+2019-10-28 12:12:09,429 ERROR: Exception on /user/John [GET] [ in e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -110,6 +111,6 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "e:\Users\Caio\Documents\Python\Microblog\app\routes.py", line 28, in index
-    return render_template("index.html", title=_("Home Page"), form=form, posts=posts.items, next_url=next_url, prev_url=prev_url)
-NameError: name '_' is not defined
+  File "e:\Users\Caio\Documents\Python\Microblog\app\routes.py", line 83, in user
+    page, app.config["POSTS_PER_PAGE"], False)
+NameError: name 'app' is not defined

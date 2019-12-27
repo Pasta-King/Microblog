@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-12-27 14:10+0000\n"
-"PO-Revision-Date: 2019-12-27 14:11+0000\n"
+"POT-Creation-Date: 2019-12-27 14:03+0000\n"
+"PO-Revision-Date: 2019-12-01 14:22+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
 "Language-Team: es <LL@li.org>\n"
@@ -24,7 +24,7 @@ msgstr "[Microblog] Nueva Contraseña"
 
 #: app/forms.py:24
 msgid "Please use a different username"
-msgstr ""
+msgstr "Por favor use un nombre de usuario diferente"
 
 #: app/forms.py:29
 msgid "Please use a different email address"
@@ -36,54 +36,54 @@ msgstr "Por favor use un nombre de usuario diferente"
 
 #: app/routes.py:19
 msgid "Your post is now live!"
-msgstr ""
+msgstr "¡Tu artículo ha sido publicado!"
 
 #: app/routes.py:50
 msgid "Invalid username or password"
-msgstr ""
+msgstr "Nombre de usuario o contraseña inválidos"
 
 #: app/routes.py:74
 msgid "Congratulations, you are now a registered user!"
-msgstr ""
+msgstr "¡Felicitaciones, ya eres un usuario registrado!"
 
 #: app/routes.py:105
 msgid "Your changes have been saved."
-msgstr ""
+msgstr "Tus cambios han sido salvados"
 
 #: app/routes.py:117 app/routes.py:132
 #, python-format
 msgid "User %(username)s not found."
-msgstr ""
+msgstr "El usuario %(username)s no ha sido encontrado."
 
 #: app/routes.py:120
 msgid "You cannot follow yourself"
-msgstr ""
+msgstr "¡No te puedes seguir a tí mismo!"
 
 #: app/routes.py:124
 #, python-format
 msgid "You are following %(username)s!"
-msgstr ""
+msgstr "¡Ahora estás siguiendo a %(username)s!"
 
 #: app/routes.py:135
 msgid "You cannot unfollow yourself!"
-msgstr ""
+msgstr "¡No te puedes dejar de seguir a tí mismo!"
 
 #: app/routes.py:139
 #, python-format
 msgid "You are not following %(username)s."
-msgstr ""
+msgstr "No estás siguiendo a %(username)s"
 
 #: app/routes.py:151
 msgid "Check your email for the instuctions to reset your password"
-msgstr ""
+msgstr "Busca en tu email las instrucciones para crear una nueva contraseña"
 
 #: app/routes.py:153
 msgid "Reset Password"
-msgstr ""
+msgstr "Nueva Contraseña"
 
 #: app/routes.py:166
 msgid "Your password has been reset."
-msgstr ""
+msgstr "Tu contraseña ha sido cambiada"
 
 #: app/templates/404.html:4
 msgid "File Not Found"
@@ -91,24 +91,24 @@ msgstr "Página No Encontrada"
 
 #: app/templates/404.html:5 app/templates/500.html:6
 msgid "Back"
-msgstr ""
+msgstr "Atrás"
 
 #: app/templates/500.html:4
 msgid "An unexpected error has occurred"
-msgstr ""
+msgstr "Ha ocurrido un error inesperado"
 
 #: app/templates/500.html:5
 msgid "The administrator has been notified. Sorry for the inconvenience!"
-msgstr ""
+msgstr "El administrador ha sido notificado. ¡Lamentamos la inconveniencia!"
 
 #: app/templates/_post.html:14
 #, python-format
 msgid "%(username)s said %(when)s"
-msgstr ""
+msgstr "%(username)s dijo %(when)s"
 
 #: app/templates/base.html:4
 msgid "Welcome to Microblog"
-msgstr ""
+msgstr "Bienvenido a Microblog"
 
 #: app/templates/base.html:21
 msgid "Home Page"
@@ -120,7 +120,7 @@ msgstr "Explorar"
 
 #: app/templates/base.html:26
 msgid "Sign In"
-msgstr ""
+msgstr "Ingresar"
 
 #: app/templates/base.html:28
 msgid "Profile"
@@ -129,4 +129,19 @@ msgstr "Perfil"
 #: app/templates/base.html:29
 msgid "Logout"
 msgstr "Salir"
+
+#~ msgid "Home Page"
+#~ msgstr "Inicio"
+
+#~ msgid "Explore"
+#~ msgstr "Explorar"
+
+#~ msgid "Sign In"
+#~ msgstr "Ingresar"
+
+#~ msgid "Register"
+#~ msgstr "Registrarse"
+
+#~ msgid "Edit Profile"
+#~ msgstr "Editar Perfil"
 
