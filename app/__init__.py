@@ -17,7 +17,7 @@ login = LoginManager(myApp)
 db = SQLAlchemy(myApp)
 migrate = Migrate(myApp, db)
 login = LoginManager(myApp)
-login.login_view = 'login'
+login.login_view = 'auth.login'
 mail = Mail(myApp)
 bootstrap = Bootstrap(myApp)
 moment = Moment(myApp)
@@ -50,9 +50,18 @@ if not myApp.debug: # Couldn't get the email to send
     myApp.logger.setLevel(logging.INFO)
     myApp.logger.info("Microblog startup")
 
+from app.errors import bp as errors_bp
+myApp.register_blueprint(errors_bp)
+
+from app.auth import bp as auth_bp
+myApp.register_blueprint(auth_bp, url_prefix="/auth")
+
+from app.main import bp as main_bp
+myApp.register_blueprint(main_bp)
+
 @babel.localeselector
 def get_locale():
     #return request.accept_languages.best_match(app.config["LANGUAGES"])
     return 'es'
 
-from app import routes, models, errors
+from app import models

@@ -1,4 +1,60 @@
-2019-12-01 17:58:09,409 ERROR: Exception on /explore [GET] [ in e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py:1891]
+2019-12-30 13:06:37,624 ERROR: Exception on /auth/login [GET] [ in e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "e:\Users\Caio\Documents\Python\Microblog\app\auth\routes.py", line 27, in login
+    return render_template('auth/login.html', title='Sign In', form=form)
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "e:\Users\Caio\Documents\Python\Microblog\app\templates\auth\login.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "e:\Users\Caio\Documents\Python\Microblog\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
+    {% block content -%}
+  File "e:\Users\Caio\Documents\Python\Microblog\app\templates\base.html", line 48, in block "content"
+    {% block app_content %}{% endblock %}
+  File "e:\Users\Caio\Documents\Python\Microblog\app\templates\auth\login.html", line 15, in block "app_content"
+    <a href="{{ url_for('reset_password_request') }}">Click to Reset It</a>
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 2215, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\helpers.py", line 358, in url_for
+    endpoint, values, method=method, force_external=external
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\werkzeug\routing.py", line 2020, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'reset_password_request'. Did you mean 'auth.reset_password_request' instead?
+2019-12-30 13:07:57,355 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:51]
+2019-12-30 13:08:45,569 ERROR: Exception on /index [POST] [ in e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,10 +70,11 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "e:\Users\Caio\Documents\Python\Microblog\app\routes.py", line 40, in explore
-    return render_template("explore.html", title=_("Explore"), posts=posts.items, next_url=next_url, prev_url=prev_url)
+  File "e:\Users\Caio\Documents\Python\Microblog\app\main\routes.py", line 19, in index
+    flash(_("Your post is now live!"))
 NameError: name '_' is not defined
-2019-12-01 17:58:11,053 ERROR: Exception on /index [GET] [ in e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py:1891]
+2019-12-30 13:09:55,447 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:51]
+2019-12-30 13:10:50,058 ERROR: Exception on /index [GET] [ in e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -31,85 +88,22 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "e:\Users\Caio\Documents\Python\Microblog\app\routes.py", line 28, in index
-    return render_template("index.html", title=_("Home Page"), form=form, posts=posts.items, next_url=next_url, prev_url=prev_url)
-NameError: name '_' is not defined
-2019-12-01 18:06:45,752 INFO: Microblog startup [ in e:\Users\Caio\Documents\Python\Microblog\app\__init__.py:51]
-2019-12-01 18:06:47,860 ERROR: Exception on / [GET] [ in e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py:1891]
-Traceback (most recent call last):
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
-    response = self.full_dispatch_request()
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask_login\utils.py", line 260, in decorated_view
+    return current_app.login_manager.unauthorized()
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask_login\login_manager.py", line 175, in unauthorized
+    redirect_url = make_login_url(login_view, next_url=request.url)
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask_login\utils.py", line 112, in login_url
+    base = expand_login_view(login_view)
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask_login\utils.py", line 89, in expand_login_view
+    return url_for(login_view)
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 2215, in handle_url_build_error
     reraise(exc_type, exc_value, tb)
   File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
     raise value
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "e:\Users\Caio\Documents\Python\Microblog\app\routes.py", line 28, in index
-    return render_template("index.html", title=_("Home Page"), form=form, posts=posts.items, next_url=next_url, prev_url=prev_url)
-NameError: name '_' is not defined
-2019-12-01 18:06:53,094 ERROR: Exception on /index [GET] [ in e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py:1891]
-Traceback (most recent call last):
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
-    response = self.full_dispatch_request()
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
-    raise value
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "e:\Users\Caio\Documents\Python\Microblog\app\routes.py", line 28, in index
-    return render_template("index.html", title=_("Home Page"), form=form, posts=posts.items, next_url=next_url, prev_url=prev_url)
-NameError: name '_' is not defined
-2019-12-01 18:06:54,213 ERROR: Exception on /explore [GET] [ in e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py:1891]
-Traceback (most recent call last):
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
-    response = self.full_dispatch_request()
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
-    raise value
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "e:\Users\Caio\Documents\Python\Microblog\app\routes.py", line 40, in explore
-    return render_template("explore.html", title=_("Explore"), posts=posts.items, next_url=next_url, prev_url=prev_url)
-NameError: name '_' is not defined
-2019-12-01 18:07:04,766 ERROR: Exception on /index [GET] [ in e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py:1891]
-Traceback (most recent call last):
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
-    response = self.full_dispatch_request()
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
-    raise value
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "e:\Users\Caio\Documents\Python\Microblog\app\routes.py", line 28, in index
-    return render_template("index.html", title=_("Home Page"), form=form, posts=posts.items, next_url=next_url, prev_url=prev_url)
-NameError: name '_' is not defined
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\flask\helpers.py", line 358, in url_for
+    endpoint, values, method=method, force_external=external
+  File "e:\Users\Caio\Documents\Python\Microblog\venv\lib\site-packages\werkzeug\routing.py", line 2020, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'auth.login' instead?
