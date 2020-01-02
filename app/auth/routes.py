@@ -3,7 +3,7 @@ from app import myApp, db
 from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
 from datetime import datetime
-
+from flask_babel import _, lazy_gettext as _l
 from app.auth import bp
 from app.auth.forms import LoginForm, RegistrationForm, ResetPasswordRequestForm
 from app.models import User, Post
